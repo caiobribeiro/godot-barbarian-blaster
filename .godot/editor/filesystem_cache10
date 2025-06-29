@@ -1,9 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1751156686
+::res://::1751198209
 icon.svg::CompressedTexture2D/CompressedTexture2D::7441832678176337244::1750289697::1750289704::1::::<><><>0<>0<>71735f87f35a065c96b02b198cc5d706<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1750289634::0::1::::<><><>0<>0<><>::
-::res://MeshLibraries/::1750291433
-SpaceLibrary.tres::MeshLibrary/MeshLibrary::574959995285320239::1750291433::0::1::::<><><>0<>0<><>::
+::res://enemy/::0
+::res://MeshLibraries/::1751200046
+SpaceLibrary.tres::MeshLibrary::574959995285320239::1751200046::0::1::::<><><>0<>0<><>::
 SpaceLibrary.tscn::PackedScene/PackedScene::2591137613867484909::1750291420::0::1::::<><><>0<>0<><>::
-::res://scene/::1750291578
-base_level.tscn::PackedScene/PackedScene::6565629873348174049::1750291578::0::1::::<><><>0<>0<><>::uid://igrrih3h8mf4::::res://MeshLibraries/SpaceLibrary.tres
+::res://scene/::1751200046
+base_level.tscn::PackedScene::6565629873348174049::1751200181::0::1::::<><><>0<>0<><>::uid://igrrih3h8mf4::::res://MeshLibraries/SpaceLibrary.tres<>uid://dma2htiphqktp::::res://scene/enemy.tscn
+enemy.tscn::PackedScene::8003181045091335437::1751200067::0::1::::<><><>0<>0<><>::
