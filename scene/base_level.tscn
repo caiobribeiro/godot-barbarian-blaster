@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0so72jchmhsr"]
+[gd_scene load_steps=9 format=3 uid="uid://c0so72jchmhsr"]
 
 [ext_resource type="MeshLibrary" uid="uid://igrrih3h8mf4" path="res://MeshLibraries/SpaceLibrary.tres" id="1_em2pb"]
 [ext_resource type="PackedScene" uid="uid://dma2htiphqktp" path="res://enemy/enemy.tscn" id="2_2vejk"]
+[ext_resource type="PackedScene" uid="uid://c8tcsylxbt283" path="res://base/base.tscn" id="3_n4a7e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em2pb"]
+albedo_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h8jo4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,9 +20,6 @@ sky = SubResource("Sky_em2pb")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em2pb"]
-albedo_color = Color(0.266667, 0.266667, 0.266667, 1)
-
 [sub_resource type="Curve3D" id="Curve3D_em2pb"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -19.971, 1.14441e-05, 5.95843, -1, 0, 1, 1, 0, -1, 14.1773, 1.14441e-05, 5.86187, 1, 0, 1, -1, 0, -1, 14.1291, 1.14441e-05, -2.15273, 1, 0, 1.1, -1, 0, -1.1, -6.004, 1.14441e-05, -2.20101, 0, 0, 0, 0, 0, 0, -6.05228, 1.14441e-05, -6.25659),
@@ -28,20 +29,13 @@ point_count = 5
 
 [node name="BaseLevel" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2vejk")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_em2pb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 1.78633, 14.6778, 9.59334)
+transform = Transform3D(1, 0, 0, 0, 0.42261797, 0.90630794, 0, -0.90630794, 0.422618, 1.78633, 14.6778, 9.59334)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_em2pb")
@@ -50,6 +44,15 @@ cell_center_y = false
 data = {
 "cells": PackedInt32Array(65532, 65534, 131072, 65532, 65535, 131072, 65532, 0, 131072, 65532, 2, 131072, 65534, 2, 131072, 65535, 2, 131072, 0, 2, 131072, 1, 2, 131072, 2, 2, 131072, 3, 2, 131072, 3, 65534, 131072, 2, 65534, 131072, 1, 65534, 131072, 0, 65534, 131072, 65533, 65534, 131072, 4, 65534, 131072, 4, 65535, 131072, 4, 0, 131072, 4, 1, 131072, 4, 2, 131072, 65533, 2, 131072, 65533, 65535, 131072, 65533, 0, 131072, 65534, 0, 131072, 65535, 0, 131072, 0, 0, 131072, 1, 0, 131072, 2, 0, 131072, 65535, 65534, 131072)
 }
+
+[node name="GlobalIlumination" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination"]
+environment = SubResource("Environment_2vejk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination"]
+transform = Transform3D(-0.8660253, -0.4330129, 0.2500001, 0, 0.49999994, 0.86602545, -0.50000024, 0.74999994, -0.43301257, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0292368, 0)
@@ -98,4 +101,8 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_2vejk")]
-transform = Transform3D(-0.027243977, 0, -0.9996068, 0, 1, 0, 0.9996068, 0, -0.027243977, -19.971, 1.14441e-05, 5.95843)
+transform = Transform3D(-0.02724389, 0, -0.99960357, 0, 1, 0, 0.99960357, 0, -0.02724389, -19.971, 1.14441e-05, 5.95843)
+loop = false
+
+[node name="Base" parent="." instance=ExtResource("3_n4a7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6.2)
