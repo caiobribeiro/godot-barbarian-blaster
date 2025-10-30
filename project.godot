@@ -12,5 +12,5 @@ config_version=5
 
 config/name="godot-barbarian-blaster"
 run/main_scene="uid://c0so72jchmhsr"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
