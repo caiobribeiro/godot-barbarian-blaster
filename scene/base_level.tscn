@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0so72jchmhsr"]
+[gd_scene load_steps=12 format=3 uid="uid://c0so72jchmhsr"]
 
 [ext_resource type="MeshLibrary" uid="uid://igrrih3h8mf4" path="res://MeshLibraries/SpaceLibrary.tres" id="1_em2pb"]
 [ext_resource type="PackedScene" uid="uid://hlxijfkyxv2i" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_ohee1"]
 [ext_resource type="PackedScene" uid="uid://dma2htiphqktp" path="res://enemy/enemy.tscn" id="2_2vejk"]
 [ext_resource type="PackedScene" uid="uid://c8tcsylxbt283" path="res://base/base.tscn" id="3_n4a7e"]
+[ext_resource type="Script" uid="uid://c28dqfmrooyhb" path="res://scene/turret_manager.gd" id="5_4jk3s"]
+[ext_resource type="PackedScene" uid="uid://cqmrl47oiwgp5" path="res://Turret/turret.tscn" id="6_2yilf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em2pb"]
 albedo_color = Color(0.266667, 0.266667, 0.266667, 1)
@@ -107,7 +109,7 @@ transform = Transform3D(-0.02724389, 0, -0.99960357, 0, 1, 0, 0.99960357, 0, -0.
 loop = false
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_2vejk")]
-transform = Transform3D(-0.02225245, 0, -0.99972624, 0, 1, 0, 0.99972624, 0, -0.02225245, -14.972652, 1.1444101e-05, 6.079603)
+transform = Transform3D(-0.022252448, 0, -0.9997261, 0, 1, 0, 0.9997261, 0, -0.022252448, -14.972652, 1.1444101e-05, 6.079603)
 progress = 5.0
 loop = false
 
@@ -128,3 +130,7 @@ loop = false
 
 [node name="Base" parent="." instance=ExtResource("3_n4a7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6.2)
+
+[node name="TurretManager" type="Node3D" parent="."]
+script = ExtResource("5_4jk3s")
+turret = ExtResource("6_2yilf")
