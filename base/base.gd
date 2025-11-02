@@ -6,7 +6,9 @@ extends Node3D
 	set(health_in):
 		current_health = health_in
 		print("health was changed")
-		label_3d.text = str(current_health)
+		label_3d.text = str(current_health) + "/" + str(max_health)
+	
+		label_3d.modulate = lerp(Color.RED, Color.WHITE, float(current_health) / float(max_health))
 		if current_health < 1:
 			get_tree().reload_current_scene()
 		
