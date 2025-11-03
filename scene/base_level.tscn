@@ -37,9 +37,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_em2pb")
 
-[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap") instance=ExtResource("1_ohee1")]
+[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("1_ohee1")]
 transform = Transform3D(1, 0, 0, 0, 0.4226179, 0.90630794, 0, -0.90630794, 0.4226179, 1.78633, 14.6778, 9.59334)
 gridmap = NodePath("../GridMap")
+turret_manager = NodePath("../TurretManager")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_em2pb")
@@ -109,7 +110,7 @@ transform = Transform3D(-0.02724389, 0, -0.99960357, 0, 1, 0, 0.99960357, 0, -0.
 loop = false
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_2vejk")]
-transform = Transform3D(-0.022252448, 0, -0.9997261, 0, 1, 0, 0.9997261, 0, -0.022252448, -14.972652, 1.1444101e-05, 6.079603)
+transform = Transform3D(-0.022252444, 0, -0.99972594, 0, 1, 0, 0.99972594, 0, -0.022252444, -14.972652, 1.1444101e-05, 6.079603)
 progress = 5.0
 loop = false
 
