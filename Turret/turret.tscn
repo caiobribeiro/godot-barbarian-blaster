@@ -36,3 +36,8 @@ mesh = SubResource("BoxMesh_1kiux")
 [node name="Berrow" type="MeshInstance3D" parent="TurretBase/TurretTop/Visor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24240708)
 mesh = SubResource("BoxMesh_ybbrv")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
