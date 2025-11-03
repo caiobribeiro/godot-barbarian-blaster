@@ -110,7 +110,7 @@ transform = Transform3D(-0.02724389, 0, -0.99960357, 0, 1, 0, 0.99960357, 0, -0.
 loop = false
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_2vejk")]
-transform = Transform3D(-0.022252444, 0, -0.99972594, 0, 1, 0, 0.99972594, 0, -0.022252444, -14.972652, 1.1444101e-05, 6.079603)
+transform = Transform3D(-0.022252442, 0, -0.9997259, 0, 1, 0, 0.9997259, 0, -0.022252442, -14.972652, 1.1444101e-05, 6.079603)
 progress = 5.0
 loop = false
 
@@ -132,6 +132,7 @@ loop = false
 [node name="Base" parent="." instance=ExtResource("3_n4a7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6.2)
 
-[node name="TurretManager" type="Node3D" parent="."]
+[node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
 script = ExtResource("5_4jk3s")
 turret = ExtResource("6_2yilf")
+enemy_path = NodePath("../Path3D")
